@@ -2,7 +2,7 @@
 /**
  * Creates item.
  */
-header("Access-Control-Allow-Origin: http://127.0.0.1/8080/");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, x-requested-with");
 header("Access-Control-Max-Age: 86400");
@@ -18,27 +18,27 @@ if(isset($postdata) && !empty($postdata))
 {
   // Extract the data.
   $request = json_decode($postdata);
-
+  
   // Validate.
-  if(trim($request->number) === '' || (float)$request->amount < 0)
+  if($request->item == '')
   {
     return http_response_code(400);
   }
 
   // Sanitize.
-  $string = mysqli_real_escape_string($con, (int)$request->item);
+  $item = mysqli_real_escape_string($con, $request->item);
 
   // Create.
-  $sql = "INSERT INTO `items`(`ID`,`item`) VALUES (null,'{$string}')";
+  $sql = "INSERT INTO `items`(`ID`,`item`) VALUES (null,'$item')";
 
   if(mysqli_query($con,$sql))
   {
     http_response_code(201);
-    $item = [
-      'item' => $string,
+    $item1 = [
+      'item' => $item,
       'id'    => mysqli_insert_id($con)
     ];
-    echo json_encode($item);
+    echo json_encode($item1);
   }
   else
   {
