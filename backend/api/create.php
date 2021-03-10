@@ -2,19 +2,12 @@
 /**
  * Creates item.
  */
+header("Access-Control-Allow-Origin: http://127.0.0.1/8080/");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, x-requested-with");
+header("Access-Control-Max-Age: 86400");
+
 require 'database.php';
-// The lines below are used to add response headers such as CORS and the allowed methods (PUT, GET, DELETE and 
-// POST).
-// Setting CORS to * will allow PHP server to accept requests from another domain 
-// where the Angular server is running from without getting blocked by the browser by reason of the Same 
-// Origin Policy. In development,  the PHP server is running from localhost:8080 port and Angular 
-// from localhost:4200 which are considered as two distinct domains.
-
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-
-
 
 echo "I am in create.php";
 

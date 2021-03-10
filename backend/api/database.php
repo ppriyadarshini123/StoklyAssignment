@@ -1,10 +1,13 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+/**
+ * Returns the list of items.
+ */
 
-echo "I am in database.php";
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type, x-requested-with");
+header("Access-Control-Max-Age: 86400");
 
 //Declare constants for database connection
 define('DB_HOST', 'localhost');
@@ -14,11 +17,10 @@ define('DB_NAME', 'todolist');
 
 function connect()
 {
-  //$connect = mysqli_connect(DB_HOST ,DB_USER ,DB_PASS ,DB_NAME);
+  $connect = mysqli_connect(DB_HOST ,DB_USER ,DB_PASS ,DB_NAME);
 
-  $connect = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-  if (isset($connect->connect_error))) {
-    die("Failed to connect:" . $mysqli->connect_error;
+  if (mysqli_connect_errno($connect)) {
+    die("Failed to connect:" . mysqli_connect_error());
   }
 
   mysqli_set_charset($connect, "utf8");
@@ -27,4 +29,3 @@ function connect()
 }
 
 $con = connect();
-?>
