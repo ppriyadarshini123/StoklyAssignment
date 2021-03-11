@@ -20,13 +20,13 @@ if(isset($postdata) && !empty($postdata))
   $request = json_decode($postdata);
   
   // Validate.
-  if($request->item == '')
+  if(trim($request->item) === '')
   {
     return http_response_code(400);
   }
 
   // Sanitize.
-  $item = mysqli_real_escape_string($con, $request->item);
+  $item = mysqli_real_escape_string($con, trim($request->item));
 
   // Create.
   $sql = "INSERT INTO `items`(`ID`,`item`) VALUES (null,'$item')";
