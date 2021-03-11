@@ -3,7 +3,7 @@
 require 'database.php';
 
 // Extract, validate and sanitize the id.
-$id = ($_GET['id'] !== null && (int)$_GET['id'] > 0)? mysqli_real_escape_string($con, (int)$_GET['id']) : false;
+$id = ($_GET['ID'] !== null && (int)$_GET['ID'] > 0)? mysqli_real_escape_string($con, (int)$_GET['ID']) : false;
 
 if(!$id)
 {
@@ -11,7 +11,7 @@ if(!$id)
 }
 
 // Delete.
-$sql = "DELETE FROM `items` WHERE `id` ='{$id}' LIMIT 1";
+$sql = "DELETE FROM `items` WHERE `ID` ='{$id}' LIMIT 1";
 
 if(mysqli_query($con, $sql))
 {
