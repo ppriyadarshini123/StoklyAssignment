@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Returns the list of items.
+ * Connects to database.
  */
 
 header("Access-Control-Allow-Origin: *");

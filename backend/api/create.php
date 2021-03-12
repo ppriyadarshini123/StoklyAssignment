@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Adds item in database.
+ */
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, x-requested-with");
@@ -19,7 +21,7 @@ if(isset($postdata) && !empty($postdata))
   if(trim($request->data->item) === '')
   {
     return http_response_code(400);
-  }
+  }//if
 
   // Sanitize.
   $item = mysqli_real_escape_string($con, trim($request->data->item));
@@ -35,9 +37,9 @@ if(isset($postdata) && !empty($postdata))
       'id'    => mysqli_insert_id($con)
     ];
     echo json_encode($item1);
-  }
+  }//if
   else
   {
     http_response_code(422);
-  }
-}
+  }//else
+}//if

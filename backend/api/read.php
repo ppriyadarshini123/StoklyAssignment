@@ -21,11 +21,11 @@ if($result = mysqli_query($con,$sql))
     $items[$i]['ID'] = $row['ID'];
     $items[$i]['item'] = $row['item'];    
     $i++;
-  }
+  }//while
 
   echo json_encode(['data'=>$items]);
-}
+}//if
 else
 {
   http_response_code(404);
-}
+}//else
