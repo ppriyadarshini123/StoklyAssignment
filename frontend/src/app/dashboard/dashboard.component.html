@@ -27,7 +27,7 @@
     <tbody>
       <tr *ngFor="let name of items[0]; let i = index" scope="row">
         <td scope="col">
-          <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$">
+          <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$" #item="ngModel">
         </td>
         <td scope="col">
           <button type="button" class="btn btn-outline-primary" (click)="updateItem(name.ID, item)">Update</button>
