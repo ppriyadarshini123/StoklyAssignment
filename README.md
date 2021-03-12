@@ -1,5 +1,5 @@
 # StoklyAssignment
-This assignment is given by Stokly as part of the interview process.
+This assignment is given by Stokly.
 
 ### Technical Stack
 * IDE - Visual Studio Code
@@ -19,7 +19,7 @@ This assignment is given by Stokly as part of the interview process.
 * Install Visual Studio Code.
 * Open Visual Studio Code - Follow instructions on https://code.visualstudio.com/download
 * Open Terminal : Click Terminal -> New Terminal
-* Install Nodejs - Follow instructions on https://nodejs.org/en/download/
+* Install Nodejs - https://nodejs.org/en/download/
 * Install Angular - npm install -g @angular/cli
 
 * Download XAMPP: https://www.apachefriends.org/download.html
