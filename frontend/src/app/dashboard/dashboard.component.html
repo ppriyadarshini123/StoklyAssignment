@@ -19,7 +19,7 @@
         </div>
       </div><!--txtAddItem-->
       <div class="btnSubmit">
-        <input type="submit" class="btn btn-primary" value="Add Item">
+        <input type="submit" class="btn btn-primary" value="Add Item" [disabled]="!f.form.valid">
       </div><!--btnSubmit-->
     </div><!--form-group-->
   </form>
@@ -37,9 +37,17 @@
       <tr *ngFor="let name of items[0]; let i = index" scope="row">
         <td scope="col">
           <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$" class="txtupdateItem" #item="ngModel">
+          <div *ngIf="item.errors" class="alert alert-danger">
+            <div [hidden]="!item.errors.required">
+              "Item is required!"
+            </div>
+            <div [hidden]="!item.errors.pattern">
+              Item can contain only a-z, A-Z, 0-9 & whitespace.
+            </div>
+          </div>
         </td>
         <td scope="col">
-          <button type="button" class="btn btn-outline-primary" (click)="updateItem(name.ID, item)">Update</button>
+          <button type="button" class="btn btn-outline-primary" (click)="updateItem(name.ID, item)" [disabled]="!item.valid">Update</button>
         </td>
         <td scope="col">
           <button type="button" class="btn btn-outline-danger" (click)="deleteItem(name.ID)">Delete</button>
