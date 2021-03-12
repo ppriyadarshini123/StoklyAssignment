@@ -58,6 +58,7 @@ export class DashboardComponent implements OnInit {
           // Inform the user
           this.success = 'Created successfully';
 
+          console.log(this.items);
            //Refresh page to view changes
            location.reload();  
 
@@ -118,4 +119,4 @@ export class DashboardComponent implements OnInit {
     this.success = '';
     this.error = '';
   }//resetErrors()
-}
+}//class DashboardComponent

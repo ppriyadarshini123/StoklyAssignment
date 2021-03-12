@@ -7,7 +7,7 @@
         <label class="form-control" for="lblAdd">New Item</label>
       </div><!--lbl-->
       <div class="txtAddItem">
-        <input type="text" name="item" [(ngModel)]="selectedItem.item" required pattern="^[a-zA-Z0-9\s]+$" #addItem="ngModel" class="form-control" id="lblAdd" />
+        <input type="text" name="item" [(ngModel)]="selectedItem.item" required pattern="^[a-zA-Z0-9\s]+$" class="form-control" id="lblAdd" />
       </div><!--txtAddItem-->
       <div class="btnSubmit">
         <input type="submit" class="btn btn-primary" value="Add Item">
@@ -27,7 +27,7 @@
     <tbody>
       <tr *ngFor="let name of items[0]; let i = index" scope="row">
         <td scope="col">
-          <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$" #item="ngModel">
+          <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$">
         </td>
         <td scope="col">
           <button type="button" class="btn btn-outline-primary" (click)="updateItem(name.ID, item)">Update</button>
