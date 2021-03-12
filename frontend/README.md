@@ -39,4 +39,4 @@ This assignment is given by Stokly.
 * Compile code: ng serve
 
 * Open browser: type http://localhost:4200/dashboard
-* You should be able to view the To Do list.
+* You should be able to view the To Do list. The snapshot of To Do list is in the project folder: StoklyAssignment/todolist-snapshot.png
