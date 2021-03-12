@@ -28,7 +28,7 @@ This assignment is given by Stokly.
 * In the browser: type http://localhost/phpmyadmin
 * This should open up the GUI for mySQL. In the SQL tab, type: CREATE DATABASE todolist
 
-* Copy & Paste SQl script from https://github.com/ppriyadarshini123/StoklyAssignment/blob/main/todolist.sql.
+* Copy & Paste SQL script from https://github.com/ppriyadarshini123/StoklyAssignment/blob/main/todolist.sql.
 * Run the script to setup the database with 1 table 'items'. The items table has 2 columns: ID & item
 
 * In Visual Studio:In terminal: Change to directory: C:\xampp\htdocs\
