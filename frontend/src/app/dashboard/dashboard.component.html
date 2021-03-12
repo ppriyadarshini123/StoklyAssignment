@@ -7,7 +7,16 @@
         <label class="form-control" for="lblAdd">New Item</label>
       </div><!--lbl-->
       <div class="txtAddItem">
-        <input type="text" name="item" [(ngModel)]="selectedItem.item" required pattern="^[a-zA-Z0-9\s]+$" class="form-control" id="lblAdd" />
+        <input type="text" name="item" #lblAdd="ngModel" [(ngModel)]="selectedItem.item" required maxlength="15" 
+        pattern="^[a-zA-Z0-9\s]+$" class="form-control" id="lblAdd" />
+        <div *ngIf="lblAdd.errors" class="alert alert-danger">
+          <div [hidden]="!lblAdd.errors.required">
+            Item is required!
+          </div>
+          <div [hidden]="!lblAdd.errors.pattern">
+            Item can contain only a-z, A-Z, 0-9 & whitespace.
+          </div>
+        </div>
       </div><!--txtAddItem-->
       <div class="btnSubmit">
         <input type="submit" class="btn btn-primary" value="Add Item">
