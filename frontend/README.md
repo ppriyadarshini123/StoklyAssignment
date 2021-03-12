@@ -1,27 +1,42 @@
-# Frontend
+# StoklyAssignment
+This assignment is given by Stokly.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+### Technical Stack
+* IDE - Visual Studio Code
+* Angular
+* Typescript
+* PHP
+* Bootstrap
+* JQuery
+* CSS
+* HTML
+* GIT
+* GITHUB
+* NODEJS
+* XAMPP
 
-## Development server
+### Instructions & Details: These instructions are for Windows environment
+* Install Visual Studio Code.
+* Open Visual Studio Code - Follow instructions on https://code.visualstudio.com/download
+* Open Terminal : Click Terminal -> New Terminal
+* Install Nodejs - https://nodejs.org/en/download/
+* Install Angular - npm install -g @angular/cli
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Download XAMPP: https://www.apachefriends.org/download.html
+* After installation..Type Xampp in the Windows Search field -> Start Apache & mySQL services
 
-## Code scaffolding
+* In the browser: type http://localhost/phpmyadmin
+* This should open up the GUI for mySQL. In the SQL tab, type: CREATE DATABASE todolist
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Copy & Paste SQL script from https://github.com/ppriyadarshini123/StoklyAssignment/blob/main/todolist.sql.
+* Run the script to setup the database with 1 table 'items'. The items table has 2 columns: ID & item
 
-## Build
+* In Visual Studio:In terminal: Change to directory: C:\xampp\htdocs\
+* Type git clone https://github.com/ppriyadarshini123/StoklyAssignment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Install all the dependencies: npm install
+* Change directory: cd frontend
+* Compile code: ng serve
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Open browser: type http://localhost:4200/dashboard
+* You should be able to view the To Do list.
