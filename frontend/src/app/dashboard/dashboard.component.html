@@ -1,0 +1,43 @@
+<h1>To Do List</h1>
+<div class="wrapper">
+  <!--FORM-->
+  <form #f="ngForm" name="theForm" (ngSubmit)="addItem(f)">
+    <div class="form-group" id="itemForm">
+      <div class="lbl">
+        <label class="form-control" for="lblAdd">New Item</label>
+      </div><!--lbl-->
+      <div class="txtAddItem">
+        <input type="text" name="item" [(ngModel)]="selectedItem.item" required pattern="^[a-zA-Z0-9\s]+$" #addItem="ngModel" class="form-control" id="lblAdd" />
+      </div><!--txtAddItem-->
+      <div class="btnSubmit">
+        <input type="submit" class="btn btn-primary" value="Add Item">
+      </div><!--btnSubmit-->
+    </div><!--form-group-->
+  </form>
+  <!--TABLE-->
+  <table border='1' width='100%' style='border-collapse: collapse;'
+    class='table table-striped table-bordered table-hover'>
+    <thead>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let name of items[0]; let i = index" scope="row">
+        <td scope="col">
+          <input type="text" [(ngModel)]="name.item" required pattern="^[a-zA-Z0-9\s]+$" #item="ngModel">
+        </td>
+        <td scope="col">
+          <button type="button" class="btn btn-outline-primary" (click)="updateItem(name.ID, item)">Update</button>
+        </td>
+        <td scope="col">
+          <button type="button" class="btn btn-outline-danger" (click)="deleteItem(name.ID)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div><!--error-->
+  <div *ngIf="success" class="alert alert-success">{{success}}</div><!--success-->
+</div><!--wrapper-->
